@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>webtest</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+	
+<servlet>
+
+<servlet-name>webtest</servlet-name> <!-- nickname 별칭 -->
+ <servlet-class>test.first</servlet-class>  <!-- (test라는 디렉토리 안에) class명 -->
+ 
+</servlet>
+<servlet-mapping>
+<servlet-name>webtest</servlet-name> <!-- 위에 servlet이름쓸꺼임.. -->
+<url-pattern>/first.do</url-pattern>
+</servlet-mapping>
+</web-app>
