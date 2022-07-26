@@ -23,4 +23,17 @@
 <servlet-name>webtest</servlet-name> <!-- 위에 servlet이름쓸꺼임.. -->
 <url-pattern>/first.do</url-pattern>
 </servlet-mapping>
+
+
+<servlet>
+
+<servlet-name>webtest2</servlet-name> <!-- nickname 별칭 -->
+ <servlet-class>test.index4</servlet-class>  <!-- (test라는 디렉토리 안에) class명 -->
+ 
+</servlet>
+<servlet-mapping>
+<servlet-name>webtest2</servlet-name> <!-- 위에 servlet이름쓸꺼임.. -->
+<url-pattern>/index4.do</url-pattern>
+</servlet-mapping>
+
 </web-app>

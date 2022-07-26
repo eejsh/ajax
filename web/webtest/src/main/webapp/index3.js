@@ -113,8 +113,8 @@ function error(){
 }
 function java_get(mid){
 	alert("test");
-	location.href='./index3.html?mid='+mid;
-	
+//	location.href='./index3.html?mid='+mid;
+	location.href='./first.do?'+mid;
 	
 }
 
