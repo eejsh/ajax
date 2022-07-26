@@ -27,37 +27,6 @@ data.onreadystatechange = members;
 data.open("GET", "./index3.json", true);   //return true 시 submit , 통신규약때문에 4번 뜸..
 data.send();
 
-//function member_list(jdata){
-//   var j = JSON.parse(jdata);
-//   var total = j["members"].length;
-//   var html_tr,html_td,text;
-//   var html_tbdy = document.getElementById("body");
-//
-//   for (var ea in j.members) {
-//      html_tr = document.createElement("tr");
-//      html_td = document.createElement("td");
-//      html_td.innerText = total;
-//      html_tr.append(html_td);
-//      for (var ea2 in j.members[ea]) {
-//	
-//	tr.getAttribute
-//	
-//         html_td = document.createElement("td");
-//         if(ea2=="area"){
-//            ea2="phone";
-//         } 
-//         else if(ea2=="phone"){
-//            ea2="area";
-//         }
-//         text = document.createTextNode(j.members[ea][ea2]);
-//         html_td.append(text);
-//         html_tr.append(html_td);
-//      }
-//      html_tr.append()
-//      html_tbdy.append(html_tr);
-//      total--;
-//   }
-
 
 
 function member_list(jdata){
