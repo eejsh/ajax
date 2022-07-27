@@ -41,6 +41,8 @@ public class first extends HttpServlet {
       response.setContentType("text/html; charset=utf-8");
       pr = response.getWriter();
       String mid = request.getParameter("mid").intern();  // 넘어온 파라미터 값.
+         System.out.println(mid);
+      
       
       JSONParser jp = new JSONParser();
       try {
