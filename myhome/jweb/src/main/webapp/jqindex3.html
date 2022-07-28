@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<title>JQuery(2일차) form post전송 + backend가 배열로 받기</title>
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery-ui.js?v=1"></script><!-- 무조건 위에 -->
+<link rel="stylesheet" type="text/css" href="./js/jquery-ui.css?v=2">
+<script>
+
+//ajax 는 id,비번 같은 간단 값에 사용..여러개 있을 때는 form
+$(function() {
+   //jquery에서는 name 안먹음..id써줘야 함
+   $("#okbtn").click(function() {
+      //is를 사용하여 radio, checkbox (true,false)를 확인
+      //var $ck = $("#like1").is(":checked");
+      var $ea = $(".ck").length;   //5, 공통 class명으로 갯수 파악
+      //console.log($ea);
+      var $w=1;
+      var $ct=0;
+      while($w<=5){
+         var $nm = "#like"+$w;
+         //$($nm).attr("checked","true");   //전체 체크박스 체크, javascript setAttribute,getAttribute = attr
+         if($("#like"+$w).is(":checked")==true){
+            $ct++;
+         }
+         $w++;
+      }
+      if($ct==0){
+         alert("한가지라도 선택하셔야 합니다.")
+      }else{
+         //form은 $("#f")로 쓰지 않고 f로 바로 사용.. $("#f").submit()에서만 사용..!
+         f.method="POST";
+         f.action="test3.do";
+         f.enctype="application/x-www-form-urlencoded";
+         f.submit();
+      }
+   });
+   
+   
+   
+   // name 값이 같을 경우
+   
+   $("#okbtn2").click(function(){
+	   var $ea = $(".ck").length; 
+	   var $w = 0;  //name 이 같으면 node형태 , eq
+	   var $ct = 0;
+	   
+	   while($w<$ea){
+		   //jquery abc.eq(0) = javascript abc[0] 
+		   //console.log($(".ck").eq($w).is(":checked")); 
+		   
+		   if($(".ck").eq($w).is(":checked")==true){  //0번 부터..
+			   $ct++;
+		    }
+		      $w++;
+	    }
+	   
+	   if($ct==0){
+	         alert("한가지라도 선택하셔야 합니다.")
+	      }else{
+	         //form은 $("#f")로 쓰지 않고 f로 바로 사용.. $("#f").submit()에서만 사용..!
+	         f.method="POST";
+	         f.action="test3.do";
+	         f.enctype="application/x-www-form-urlencoded";
+	         f.submit();
+	      }
+	   
+	   
+   });
+   
+});
+</script>
+</head>
+<body>
+<!-- <form name="f" id="f"> -->
+<!-- <p>좋아하는 운동경기는 무엇입니까?</p> -->
+<!-- 야구<input type="checkbox" name="like1" id="like1" class="ck" value="야구"><br> -->
+<!-- 축구<input type="checkbox" name="like2" id="like2" class="ck" value="축구"><br> -->
+<!-- 농구<input type="checkbox" name="like3" id="like3" class="ck" value="농구"><br> -->
+<!-- 배구<input type="checkbox" name="like4" id="like4" class="ck" value="배구"><br> -->
+<!-- 탁구<input type="checkbox" name="like5" id="like5" class="ck" value="탁구"><br> -->
+<!-- <input type="button" value="확인" id="okbtn"> -->
+<!-- </form> -->
+
+
+<!-- id는 다르게 쓸수 없지만 name은 다르게 쓸수 있음 (체크박스에 한해서, 다른 태그에class 추가하면 안됨..) -->
+<form name="f" id="f">
+<p>좋아하는 운동경기는 무엇입니까?</p>
+야구<input type="checkbox" name="like" id="like1" class="ck" value="야구"><br>
+축구<input type="checkbox" name="like" id="like2" class="ck" value="축구"><br>
+농구<input type="checkbox" name="like" id="like3" class="ck" value="농구"><br>
+배구<input type="checkbox" name="like" id="like4" class="ck" value="배구"><br>
+탁구<input type="checkbox" name="like" id="like5" class="ck" value="탁구"><br>
+<input type="button" value="확인" id="okbtn2">
+</form>
+</body>
+</html>
