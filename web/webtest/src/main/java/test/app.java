@@ -33,24 +33,26 @@ public class app extends HttpServlet {
 	response.setContentType("text/html; charset=utf-8");	
 		
 	PrintWriter pr = response.getWriter();
-	String userno = request.getParameter("ub");
-	int unn = Integer.parseInt(userno);
+//	String userno = request.getParameter("ub");
+	int usernn =Integer.parseInt(request.getParameter("ub"));
+	
+	//int unn = Integer.parseInt(userno);
 	
 //	pr.print(userno);
 	
 	Random ro = new Random();
 	int com = ro.nextInt(10+1);
 	
-	if(com==unn) {
+	if(com==usernn) {
 		//pr.print("<script>alert('당첨!')</script>");
-			pr.print("당첨! user:"+unn+ " com:" + com);
+			pr.print("당첨! user:"+usernn+ " com:" + com);
 	}else {
 		//pr.print("<script>alert('다음기회에!'); history.go(-1)</script>");
-		pr.print("다음기회에..! user:"+unn+ " com:" + com);
+		pr.print("다음기회에..! user:"+usernn+ " com:" + com);
 	}
 	
 	System.out.println(com);
-	System.out.println(unn);
+	System.out.println(usernn);
 	
 		
 		
