@@ -44,12 +44,10 @@ public class app extends HttpServlet {
 	int com = ro.nextInt(10+1);
 	
 	if(com==usernn) {
-		
-			pr.print("당첨! user:"+usernn+ " com:" + com);
 		//pr.print("<script>alert('당첨!')</script>"); ->html data쪽에.
-		
+			pr.print("당첨! user:"+usernn+ " com:" + com);
 	}else {
-
+		//pr.print("<script>alert('다음기회에!'); history.go(-1)</script>");
 		pr.print("다음기회에..! user:"+usernn+ " com:" + com);
 	}
 	

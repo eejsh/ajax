@@ -115,7 +115,7 @@ function java_get(mid){
 	alert("test");
 console.log(mid);
 //	location.href='./index3.html?mid='+mid;
-	location.href='./first.do?mid'+mid;
+	location.href='./first.do?mid='+mid;
 	
 }
 
