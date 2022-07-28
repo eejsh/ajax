@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AJAX 3일차 [응용문제] get 전송</title>
+<script src ="./jquery.js"></script>
+<script>
+
+$(function(){
+	
+	
+	/*
+	응용문제
+	사용자가 1~ 10까지 숫자 중 한가지를 선택합니다.
+	해당 숫자를 app (java) 로 backend로 ajax로 전달합니다.
+	backend는 1~10 까지 중 무작위 숫자 하나를 뽑습니다.
+	사용자가 입력한 숫자 와 무작위 숫자가 같을 경우 "당첨" , 다를경우 "다음기회에" 라고 app.html로 return 해 줍니다.
+	hit : ajax에서 전송 되는 값은 모두 문자입니다.
+	파라미터로 받을 시 문자 -> 숫자로 변환시켜줘야함. 
+	*/
+
+	
+	$("#btn").click(function(){
+	
+		var $ub =$("#num").val();  //user가 입력한 값.
+		
+		$.ajax({
+		
+			url: "./app",  //전송경로
+			data : {ub : $ub}, //파라미터값 ub
+			catch:false,
+			type :"GET",   //get전송 
+			success : function(data){
+			console.log(data);
+			},
+			error : function(){
+				console.log("통신오류~");
+			}
+			
+			
+		});
+		
+		
+	});
+	
+	
+	
+});
+
+</script>
+</head>
+<body>
+
+<input type ="text" id="num" maxlength="1" placeholder="1~10숫자 중 1개만 입력">
+<input type ="button" value="확인" id="btn">
+
+</body>
+</html>

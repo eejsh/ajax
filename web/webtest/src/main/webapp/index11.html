@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AJAX 3일차 (Jquery 중급문법) -ajax </title>
+<!-- get으로 보낼 경우 파라미터
+post으로 보낼경우 name 값 필수  -->
+<script src ="./jquery.js"></script>
+<script>
+$(function(){
+	
+	$("#btn").click(function(){
+	
+		var $mid =$("#mid").val();
+		var $key = "123456";
+		 /*java(backend)
+		 datatype 이 있으 경우와 없을 경우가 발생합니다.
+		 없을 경우는 datatype을 "text" , "JSON" 또는 명시하지 않습니다. 
+		 단, url에 datatype이 있을 경우 해당 파일 속성명으로 전송하면 됩니다.
+		 */
+		//url. "./index11.do 면 datatype:do 동일하게 설정. "단, url : 타입이 없으면 JSON, text로 보내줘야 값이 날아감. 
+		
+		$.ajax({
+		url:"./index11",   //전송경로
+		data:{mid:$mid, key:$key},       //파라미터 값 설정 mid
+		catch : false ,        //데이터 갱신사항    //catch:true하면 한번 전송 후 데이터가 변경되지않음. false는 데이터 실시간으로 변경됨.
+		type :	"GET",     //post, get
+	//	datatype:"JSON", 
+		success : function(data){ //전송이 올바르게 진행 될 떄 : 무조건 넣어주기.. response 
+			console.log(data);
+			
+		},
+		error : function(){  // 전송오류 발생시 
+			console.log("통신오류");
+		}
+			
+		});
+		
+	
+	});
+	
+});
+
+
+</script>
+
+</head>
+<body>
+<input type="text" id="mid">
+<input type="button" value="전송" id="btn">
+
+</body>
+</html>

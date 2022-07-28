@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AJAX 3일차 (Jquery 기초문법)</title>
+
+<!-- 제이쿼리 엔진은 무조건 상위에 있어야함! -->
+<script src ="./jquery.js"></script>
+
+<script>
+
+// $(document).ready(function(){  //책으로 배울시..
+// 	alert("test");
+// });
+
+// (function($){
+// 	alert("test");
+// });(jQuery);
+
+$(function(){  //jquery 모든 문법을 사용해야 함. (약어)    id 값에 #붙여야함,   .->class  (sytle시트 즉 자바스크립트 편하게 사용하기위해서 나옴)	
+//	alert("test");
+
+//id 값에는 # 붙여줘야함.
+
+//click, change, submit 
+//javascript문법에 $붙여주면됨......
+
+ $("#btn").click(function(){       //핸들링 문법 .  onclick 이전 문법.
+//	 alert("test"); 
+  
+ var $w=0;
+ while($w<10){
+	 console.log($w);
+	 $w++;
+ } 
+ });
+ 
+ $("#sbtn").change(function(){
+  //this -> #sbtn을 지칭함.
+  var $a = $(this).val();  // 변수 선언시 무조건 $ 붙임
+  //값을 가져올때는 val();
+	 console.log($a);                     
+	
+ });
+
+ 
+ $("#btn2").click(function(){
+	var $b ="홍길동";
+  	$("#mid").val($b);      
+//val() 값을 가져오기  <->  val($b) 해당 값을 전달.	
+	
+ });
+ 
+ 
+ 
+	
+});
+
+</script>
+
+</head>
+<body>
+<input type="button" value="전송" id="btn">
+
+<select id="sbtn">
+<option value="">[통신사]</option>
+<option value="skt">skt</option>
+<option value="kt">kt</option>
+<option value="lgt">lgt</option>
+</select>
+
+<input type="text" id="mid">
+<input type="button" value="클릭" id="btn2">
+
+
+</body>
+</html>

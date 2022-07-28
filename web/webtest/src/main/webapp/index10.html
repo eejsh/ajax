@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AJAX 3일차 (Jquery 중급문법) -확장함수2 (상속) + api 연동 </title>
+<script src ="./jquery.js"></script>
+<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+<script>
+//backend : jquery (핸들링, ajax, setter, getter함수, api 연동) data 전송, 통신 쪽 공부! 
+
+$(function(){
+	
+	$("#address_btn").postcodifyPopUp({
+		insertPostcode5 : "#addr",
+		insertAddress : "#addr2"
+
+	});
+	
+	
+	
+	$("#btn").click(function(){
+		var $a ="홍길동";
+		$.box1($a);
+	});
+	
+	$.fn.abc = function(){ //getter 
+		var $b = 10;
+		return $b;
+		
+	}
+	console.log($.fn.abc());
+	
+$.extend({  // 상속 : 함수를 모아놓은 그룹을 extend
+	box1:function($nm){        //setter
+	console.log("box1");
+	console.log($nm);
+	},
+	box2:function(){
+	console.log("box2");
+	}	
+	
+});
+	$.box2();
+	
+	$("#f").submit(function(){
+		this.method = "POST";
+		this.action = "./index10.do";
+		this.enctype ="application/x-www-form-urlencoded";
+		this.submit();
+		
+	});
+	
+	
+});
+
+</script>
+<body>
+<input type ="button" id="btn" value="클릭"><br>
+
+<!-- post 전송 시 name값 필수!!!!!!!!!!!!!!!!!!!! -->
+<form name="f" id="f" >
+<input type="text" name="addr"  id="addr" maxlength="5" readOnly ><br>
+<input type="text" name="addr2" id="addr2" readOnly style="width:300px;" ><br>
+<input type="text" name="addr3" id="addr3" style="width:300px;" placeholder="상세주소 입력"><br>
+
+<input type="button" id="address_btn" value="주소검색" ><br>
+<input type ="submit" value="회원가입" >
+</form>
+
+</body>
+</html>

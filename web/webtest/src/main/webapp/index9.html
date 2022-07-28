@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AJAX 3일차 (Jquery 중급문법) -확장함수 </title>
+<script src ="./jquery.js"></script>
+<script>
+
+//제이쿼리 안에 자바스크립트 함수 작동안됨! 
+//제이쿼리보다 자바스크립트가 더 우선순위.
+	const c ="홍길동2";  // 자바스크립트 전역변수
+
+
+$(function(){
+
+	const $c ="테스트"; //jquery 전역변수
+	 
+	$("#btn").click(function(){
+		abc(); // javascript 함수 호출
+               // 해당 javascript 함수로 전달 시 jquery에서 처리하는 변수값에 대한 적용사항이 전달되지 않음
+   $.fn.abc();
+	});
+	
+	$.fn.abc = function(){
+		console.log("확장함수");
+		abc("연습");    // jquery에서 javascript abc를 호출함. 
+	}
+	$.fn.bbb = function(){
+		console.log($c);  
+		console.log(c);  
+	}
+	function bbb(){  //error 제이쿼리 안에 있기때문.
+		console.log("test");
+	}
+	
+});
+//	bbb();//jquery안에 있는 bbb는 호출 하지 못함.
+	
+	
+	
+function abc(){
+	console.log($c);
+	console.log("test");
+	$.fn.bbb();  //javascript에서 jquery 확장 함수 호출 가능.
+	} //let $c ="테스트"에서 var $c 홍길동으로 변환되서 출력됨. 변수 확인 중요!
+
+
+//abc(); 에러!
+
+
+</script>
+</head>
+<body>
+
+<!-- 제이쿼리 안에 자바스크립트 함수는 호출 하지 못함. -->
+<input type="button" value="test" onclick="abc();"><!-- onclick=bbb(); 호출 못함.-->
+
+<input type="button" value="test2" id="btn" >
+
+<input type="button" value="test3" onclick="$.fn.bbb()"><!-- jquery 안에 있는 확장함수를 onclick으로 핸들링 가능. -->
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AJAX 3일차 (Jquery 중급문법) -form, location</title>
+<script src ="./jquery.js"></script>
+<script>
+$(function() {
+	   $("#btn").click(function() {
+	      //location.href="index5.do?user=hong";
+	      var $usernm = $("#usernm").val();
+	      
+	      if($usernm==""){
+	         alert("고객명을 입력하세요.");
+	      }else{
+	         location.href = "./index5.do?user="+$usernm;
+	      }
+	   });
+
+	   // do?user= // + $mid &pw = + $mpw;
+	   $("#btn2").click(function() {
+	      var $mid = $("#mid").val();
+	      var $mpw = $("#mpw").val();
+	      if($mid=="" || $mpw==""){
+	         alert("아이디, 비밀번호를 입력하세요.");
+	      }else{
+	         location.href = "http://192.168.100.204:8080/webtest/index7.do?user="+$mid+"&pw="+$mpw;
+	         //location.href = "./index7.do?user="+$mid+"&pw="+$mpw;
+	      }
+	   });
+	   
+	   
+	   
+	   
+	   //풀이
+	   $("#login2").click(function(){
+		   var $mid2 = $("#mid2").val();
+		   var $mpw2 = $("#mpass2").val();
+		   location.href="./index7.do?mid2="+$mid2 + "&mpw2" + $mpw2;  
+		                     //?mid2   &   mpw2   두개 넣을 경우 &로 넣기 
+	   });
+	   
+		
+});
+
+
+
+</script>
+</head>
+<body>
+<input type="text" id="usernm">
+<button type="button" id="btn">클릭</button><br><br>
+
+<input type="text" id="mid"><br>
+<input type="password" id="mpw"><br>
+<button type="button" id="btn2">로그인</button>
+
+
+<br><br>
+<!-- 풀이 -->
+<input type="text" id="mid2">
+<input type="password" id="mpass2">
+<input type="button" value="로그인" id="login2">
+
+
+
+
+
+</body>
+
+</html>
