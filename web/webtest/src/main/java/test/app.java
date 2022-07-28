@@ -46,6 +46,8 @@ public class app extends HttpServlet {
 	if(com==usernn) {
 		
 			pr.print("당첨! user:"+usernn+ " com:" + com);
+		//pr.print("<script>alert('당첨!')</script>"); ->html data쪽에.
+		
 	}else {
 
 		pr.print("다음기회에..! user:"+usernn+ " com:" + com);
