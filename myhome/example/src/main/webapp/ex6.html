@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+<title>ajax 실시간 데이터 변경</title>
+<script src="./js/jquery.js"></script>
+<script>
+
+// $(function(){
+// 	$.fn.aaa = function(){
+// 	console.log("test");
+// 	setTimeout($.fn.aaa,1000);    // 지속성 형태로 구성하는 방식
+// 	}
+// 	setTimeout($.fn.aaa,1000);  
+	/*응용*/
+	
+// 	$.fn.bbb = function(){
+// 	$("#dataview").Text("test");
+	
+	//innerText =Text("test");
+	//innerHTML = HTML("test");
+// 		setTimeout($.fn.bbb,2000);
+// 	}
+// 	setTimeout($.fn.bbb,2000);
+
+//	setTimeout($.fn.aaa,1000);    // 1회성 시간타이머
+//	setInterval($.fn.aaa, 1000);  // 1초마다 지속적으로 찍힘
+// });
+
+$.fn.ccc = function(){
+
+	$.ajax({
+	
+		url : "./ex6.do",
+		method : "GET",
+		dataType : "html",
+		cache : false,
+		success : function($data){
+		
+			$("#dataview").html($data);
+		
+		},error:function(){
+			console.log("통신오류");
+		}
+		
+});
+
+	setTimeout($.fn.ccc,1000);
+
+}
+setTimeout($.fn.ccc,1000); //ajax를 호출하면 ajax안에서만 돌아서 setTimeout 못읽음. function 하나 묶어줘야됨.
+
+	
+//첨부터 값이 비어있을 경우 setinterval  -->1번밖에 사용이 안됨 
+
+//원래 데이터가 있을 경우에는 setTimeout 을 사용해야됨. 
+
+
+
+
+</script>
+</head>
+<body>
+
+<div id = "dataview"></div>
+
+</body>
+</html>

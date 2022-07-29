@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+<title>ajax 복습 2</title>
+<script src="./js/jquery.js"></script>
+
+
+<script>
+//jquery는 api사용불가. 어플 X
+
+$(function(){
+//input type= submit이면 $.f.aaaa  ~~ 로 해야됨. 
+
+$("#members").click(function(){
+		$("#f").submit();
+		
+	});
+	
+});
+
+
+function members1(){
+	f.submit();
+	
+}
+
+
+
+</script>
+
+</head>
+<body>
+
+<form name="f" id="f" method="post" action="./ex2.do" enctype="application/x-www-form-urlencoded">
+[아이디] : <input type="text" name="mid" id="mid"> <br>
+[비밀번호] : <input type="password" name="mpass" id="mpass"> <br>
+[성별] 
+<input type="radio" name="msex" value="M"  >남성 
+<input type="radio" name="msex" value="W" checked>여성  <!-- 라디오, 체크박스는 value값 무조건 설정.. 어떤값인지 모름 -->
+<br> [서비스 수신여부] 
+SMS수신 여부<input type="checkbox" name="sms" value="Y" id="sms"> <br>
+<input type="button" value="js" onclick="members1();"> 
+<input type="button" value="jq" id="members">
+
+</form>
+
+
+</body>
+</html>
