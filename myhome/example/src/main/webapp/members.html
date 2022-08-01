@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>재시험</title>
+    <link rel="stylesheet" href="./join.css">
+</head>
+<body>
+        <div class="joinContainer">
+            <h2 class="joinTit">회원가입</h2>
+            <div class="joinWarp">
+                <dl>
+                    <dt>아이디</dt>
+                    <dd class="input_st1">
+                        <input type="text" placeholder="4~16자 까지 입니다." maxlength="16" id="mid">
+                        
+                        <span class="joinID"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>비밀번호</dt>
+                    <dd class="input_st1">
+                        <input type="password" placeholder="4~16자 까지 입니다." maxlength="16" id="mpass">
+                        <span class="joinPw1"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>비밀번호확인</dt>
+                    <dd class="input_st1">
+                        <input type="password" maxlength="16" id="ckpw">
+                        <span class="joinPw2"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>이름</dt>
+                    <dd class="input_st1">
+                        <input type="text" maxlength="20">
+                        <span class="joinName"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>닉네임</dt>
+                    <dd class="input_st1">
+                        <input type="text" placeholder="사용할 닉네임을 입력하세요">
+                        <span class="joinNic"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>E-mail</dt>
+                    <dd class="input_st1">
+                        <input type="text" placeholder="예) example@naver.com">
+                        <span class="joinEmail"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>전화번호</dt>
+                    <dd class="input_st2">
+                        <input type="text" maxlength="3"><span>-
+                        </span><input type="text" maxlength="4"><span>-
+                        </span><input type="text" maxlength="4">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>휴대폰번호</dt>
+                    <dd class="input_st2">
+                        <input type="text" maxlength="3" id="t1"><span>-
+                        </span><input type="text" maxlength="4" id="t2"><span>-
+                        </span><input type="text" maxlength="4" id="t3">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>주소</dt>
+                    <dd class="input_st3">
+                        <input type="text" placeholder="우편번호" readonly>
+                        <span class="joinHome"></span>
+                        <input type="button" value="주소 검색">
+                    </dd>
+                    <dd class="input_st1">
+                        <input type="text" maxlength="60" placeholder="도로명주소" readonly>
+                    </dd>
+                    <dd class="input_st1">
+                        <input type="text" maxlength="60" placeholder="상세주소">
+                    </dd>
+                    <dd class="input_st1 refer">
+                        <input type="text" placeholder="참고항목" disabled>
+                    </dd>
+                </dl>
+            </div>
+            <div class="buttonBox">                   
+                    <input class="joinBtn" type="button" value="회원가입">
+                    <input class="cancelBtn" type="button" value="취소">
+            </div>
+        </div>  
+
+</body>
+
+<script>
+
+
+var id = document.getElementById("mid").value;
+var pw = document.getElementById("mpass").value;
+var tel1 = document.getElementById("t1").value;
+var tel2 = document.getElementById("t2").value;
+var tel3 = document.getElementById("t3").value;
+var pw2 = document.getElementById("ckpw").value;
+
+if(id.length <4 || id.length > 16){
+	alert("아이디는 4글자이상 16글자 이하입니다.");
+}else if(pw.length < 4 || pw.length >16){
+	alert("비밀번혼는 4자 이상, 16글자 이하입니다.");
+}else  if(pw!=pw2){
+	alert("비밀번호가 틀립니다.");
+}else if(te11=="" || tel2 =="" || tel3==""){
+	alert("전화번호를 입력하세요.");
+}else {
+let ckemail = /^[0-9a-zA-Z]*@[0-9a-zA-Z]*\.([0-9a-zA-Z]{2,3}$/i; 
+console.log(ckemail.test(email));
+
+var cktel = /[^0-9]/g;  //g 전체 그룹을 따짐.  [0-9] 배열 (0~9까지)
+var tel = tel1.replace(cktel,"");   //숫자가 아니면 초기화시킴
+
+
+
+}
+
+
+
+
+</script>
+
+</html>
