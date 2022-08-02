@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<title>회원가입</title>
+<script src="./js/jquery.js"></script>
+<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+<script src="./js/join.js?v=5"></script>
+<script>
+
+$(function(){
+	
+	
+// 	var $pw = btoa("a123456");
+// //	var $pw1 = atob("YTEyMzQ1Ng==");
+// 	console.log($pw);
+	
+	
+	$("#joincancel").click(function(){   // 가입 취소 버튼
+		alert("회원가입 취소 하셨습니다.");
+		location.href='./index.html';
+	});
+	
+	$("#serach_id").click(function(){ //아이디 중복체크
+		
+		var $id = $("#userid").val();  //입력 아이디값 가져오기.
+		if($id==""){
+			alert("아이디를 입력해 주세요");
+			}else{
+				//확장 함수로 값을 넘김 - ajax 실행
+				$.fn.idcheck($id);
+			}
+		});  //-끝
+	
+	$("#serach_addr").postcodifyPopUp({  // 주소 찾기 버튼
+		insertPostcode5:"#addr1",    //우편번호
+		insertAddress:"#addr2"    //도로명주소
+	});
+	
+	
+	$.fn.idcheck = function($id){  //backend는 뭐로 받을지만 정하면 됩니다.// userid로 전달
+
+		$.ajax({
+			url:"loginck.do",
+			cache:false,
+			type:"POST",
+			data:{userid:$id},
+			dataType:"text",
+			success:function($data){ //ok가 날라오면 중복 안됨. , no로 날라오면 중복됨.  //backend가 보내주는값 -ok, no
+			
+				if($data=="no"){
+					alert("중복된 아이디 입니다.");
+					
+				}else{
+					alert("사용 가능하신 아이디 입니다.");
+					$("#userid").attr("readonly", true);
+					
+					$("#ck").val($data); 
+					
+				}
+			},
+			error:function(){
+				console.log("통신오류발생..");
+			}
+		});
+		
+	}
+	
+});
+
+
+</script>
+</head>
+<body>
+
+<form  name="f" id="f" >
+
+<input type="hidden" name="ck" id="ck" value="" >  
+ 
+아이디 : <input type="text" name="userid" id="userid">           <!-- 중복체크 되면 바뀜..  -->
+<input type="button" value="중복확인" id="serach_id">  <br>
+패스워드 : <input type="password" name="userpw" id="userpw"><br>
+패스워드 확인 : <input type="password" name="userpw2" id="userpw2"><br>
+
+고객명 : <input type="text" name="usernm" id="usernm"><br>
+
+이메일 : <input type="text" name="useremail" id="useremail"><br>
+
+연락처 : <input type="text" name="usertel" id="usertel">※ 숫자만 입력하세요.. <br>
+
+주소 : <input type="text" name="addr1" id="addr1" readonly>
+<input type="button" value="주소찾기" id="serach_addr" ><br>
+<input type="text" name="addr2" id="addr2" readonly><br>
+<input type="text" name="addr3" id="addr3"><br>
+<br>
+
+<input type="button" value="회원가입" id="joinok">
+<input type="button" value="가입취소" id="joincancel">
+</form>
+
+
+
+</body>
+</html>
