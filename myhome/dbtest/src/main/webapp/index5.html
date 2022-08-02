@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<title>사용자 삭제</title>
+<script>
+	function abc(i) {
+		var z = document.getElementById("idx")
+		z.value = i;
+		if (confirm("해당 데이터는 삭제 시 복구 되지 않습니다. 진행 하시겠습니까?")) {
+			f.submit();
+		}
+
+	}
+</script>
+
+</head>
+<body>
+
+	<form name="f" id="f" method="POST" action="index5.do">
+		<input type="hidden" name="idx" id="idx" value="">
+		<p>사용자 삭제</p>
+		<table>
+			<tr>
+				<td>데이터1[강괌촨]</td>
+
+				<td><input type="button" value="삭제" onclick="abc(1)"></td>
+
+			</tr>
+			<tr>
+				<td>데이터2[이순신]</td>
+				<td><input type="button" value="삭제" onclick="abc(2)"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

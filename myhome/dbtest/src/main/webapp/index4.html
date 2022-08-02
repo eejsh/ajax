@@ -3,9 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
-<title>Insert title here</title>
+<title>포인트 업데이트 사용법</title>
+<script>
+
+
+   function abc(i){
+      var ids = document.getElementById("data"+i);
+      if(ids.value==""){
+         alert("포인트 값을 입력해 주시길 바랍니다.");
+      }
+      else{
+//NaN(Not a Number) : false (숫자만 적용 되었을 경우), true(문자가 있음.)
+//NaN : 숫자를 검토하는 함수 입니다. 
+         if(isNaN(ids.value)==true){
+            alert("숫자만 입력하세요");
+         }else{
+            f.submit();
+         }
+      }
+   }
+
+
+  
+</script>
+
 </head>
 <body>
-test
+
+	<form name="f" id="f" method="POST" action="index4.do">
+<p>포인트 변경</p>
+<table>
+<tr>
+<td>데이터1[강괌촨]</td>
+<td>
+<input type="hidden" name="jidx1" id="jidx1" value="1">
+<input type ="text" name="data1" id ="data1">
+</td>
+ <!-- input type="hidden 보이지않으나 데이터는있음. abc(1) idx 1번 .. 이렇게는 잘 안씀. 보안안좋음.  -->
+<td><input type ="button" value="수정" onclick="abc(1)"></td>
+
+</tr>
+<tr>
+<td>데이터2[이순신]</td>
+<td>
+<input type="hidden" name="jidx2" id="jidx2" value="2">
+<input type ="text" name="data2" id="data2"></td> 
+<td><input type ="button" value="수정" onclick="abc(2)"></td> 
+</tr>
+</table>
+</form>
+
 </body>
 </html>
