@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<title>상품 리뷰 작성 페이지</title>
+<script>
+
+function writeok(){
+	
+	var a = document.getElementById("username").value;
+	var b = document.getElementById("proname").value;
+	var c = document.getElementById("textbox").value;
+	
+	
+	if(a =="" || b=="" || c==""){
+		alert('빈칸을 모두 채워주세요..');
+		
+	}else{
+
+		frm.method ="POST";
+		frm.action="review_nc.do";
+		frm.enctype = "application/x-www-form-urlencoded";
+		frm.submit();
+		
+	}
+	
+}
+function cancel(){
+	
+	alert("작성이 취소됩니다.");
+	 window.location.reload();
+
+}
+
+
+
+
+</script>
+
+</head>
+
+<body>
+
+<form id="frm" name="frm" method="post">
+상품 리뷰 작성 페이지 <br>
+[고객명] : <input type="text" id="username" name="username"> <br>
+[상품명] : <input type="text" id="proname" name="proname"> <br>
+[평점] :  <br>
+5점<input type="radio" value="5" name="ro" checked> 
+4점<input type="radio" value="4" name="ro"> 
+3점<input type="radio" value="3" name="ro"> 
+2점<input type="radio" value="2" name="ro"> 
+1점<input type="radio" value="1" name="ro"> 
+<br>
+[내용] : <br> <textarea cols ="50" rows="10" name="textbox" id="textbox" placeholder="내용을 입력하세요">
+</textarea>
+
+<br><br>
+
+<input type="button" value="작성완료" onclick="writeok();">
+<input type="button" value="작성취소" onclick="cancel();">
+
+</form>
+
+</body>
+</html>
