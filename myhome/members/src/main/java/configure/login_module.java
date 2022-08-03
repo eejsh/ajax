@@ -17,7 +17,7 @@ public class login_module {
 	
 	
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		
+		//원래는 static 사용안함..
 	   //데이터베이스.. throws 선언 시 try 사용XX 
 		
 		dbconfig db = new dbconfig();

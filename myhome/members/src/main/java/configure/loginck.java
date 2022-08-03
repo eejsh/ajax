@@ -28,6 +28,7 @@ public class loginck extends HttpServlet {  // 컨트롤..
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
 		
 		String mid = request.getParameter("userid");
 		System.out.println(mid);
@@ -39,7 +40,7 @@ public class loginck extends HttpServlet {  // 컨트롤..
 			
 			lm.main(data);  //배열
 			
-			response.setContentType("text/html; charset=utf-8");
+		
 			
 			PrintWriter pw = response.getWriter();
 			

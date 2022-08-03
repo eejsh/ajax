@@ -30,7 +30,7 @@ public class joinok extends HttpServlet {
 		//배열값으로 넘겨주면 좋음..
 		
 		request.setCharacterEncoding("utf-8");
-	
+		response.setContentType("text/html; charset=utf=8");
 		
 		this.mid = request.getParameter("userid");
 		this.mpass = request.getParameter("userpw");
@@ -61,7 +61,7 @@ public class joinok extends HttpServlet {
 	//	System.out.println(list);
 		jm.insert(list);
 		//입력값이 많으면 모듈에서 처리해주어야 합니다../
-		response.setContentType("text/html; charset=utf=8");
+		
 		
 		String r = jm.join_msg().intern();
 		PrintWriter pr = response.getWriter();
