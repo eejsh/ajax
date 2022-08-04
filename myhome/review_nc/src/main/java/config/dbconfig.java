@@ -13,8 +13,8 @@ public class dbconfig {
 	//	String dburl ="jdbc:mysql://umj7-009.cafe24.com/WebMysql"; //컴
 		
 		String dbdrive = "com.mysql.jdbc.Driver";
-	    String dbuser = "eejsh08";
-	    String dbpw ="hoho12!@";
+	    String dbuser = "아이디";
+	    String dbpw ="비번";
 		
 		Class.forName(dbdrive);
 		Connection con = DriverManager.getConnection(dburl, dbuser, dbpw);
