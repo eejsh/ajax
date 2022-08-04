@@ -27,9 +27,11 @@ public class reviewok_module {
 			dbconfig dc = new dbconfig();
 			Connection ct = dc.con();
 			
-			String sql = "insert into pd_review values ('0',?,?,?,?,'"+today+"','0001-01-01 01:00:00'); ";
+			
+			String sql = "insert into pd_review values ('0',?,?,?,?,'"+today+"','0001-01-01 01:00:00',?); ";
 			PreparedStatement ps = ct.prepareStatement(sql);
 			
+			System.out.println(sql);
 
 			
 //			ps.setString(1, data.get(0));

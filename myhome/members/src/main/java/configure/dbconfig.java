@@ -22,10 +22,10 @@ public class dbconfig {  //SQL 환경설정 , 모듈
 		
 	
 		//실제로 올릴땐 localhost:3306 으로 잡아서 백업
-		String dburl ="jdbc:mysql://localhost:3306/아이디";
+		String dburl ="jdbc:mysql://localhost:3306/eejsh08";
 		String dbdrive = "com.mysql.jdbc.Driver";
-	    String dbuser = "아이디";
-	    String dbpw ="비번";
+	    String dbuser = "eejsh08";
+	    String dbpw ="hoho12!@";
 	    
 		
 		Class.forName(dbdrive);    //jdbc class 명 . 라이브러리 안에  com.mysql.jdbc,Driver가 포함되어있음. 

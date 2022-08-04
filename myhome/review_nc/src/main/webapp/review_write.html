@@ -20,7 +20,10 @@ function writeok(){
 
 		frm.method ="POST";
 		frm.action="review_nc.do";
-		frm.enctype = "application/x-www-form-urlencoded";
+		
+///		frm.action = "ex1.do";
+		
+		frm.enctype = "multipart/form-data";
 		frm.submit();
 		
 	}
@@ -33,16 +36,14 @@ function cancel(){
 
 }
 
-
-
-
 </script>
 
 </head>
 
 <body>
 
-<form id="frm" name="frm" method="post">
+<form id="frm" name="frm" method="post" enctype="multipart/form-data">
+
 상품 리뷰 작성 페이지 <br>
 [고객명] : <input type="text" id="username" name="username"> <br>
 [상품명] : <input type="text" id="proname" name="proname"> <br>
@@ -55,11 +56,16 @@ function cancel(){
 <br>
 [내용] : <br> <textarea cols ="50" rows="10" name="textbox" id="textbox" placeholder="내용을 입력하세요">
 </textarea>
+<br>
 
+<!-- 파일첨부 -->
+<input type="file" name="file" accept="image/*" >
+<!-- multiple="multiple", 여러 파일 첨부시 input type에 선언해야됨. -->
 <br><br>
 
 <input type="button" value="작성완료" onclick="writeok();">
 <input type="button" value="작성취소" onclick="cancel();">
+
 
 </form>
 

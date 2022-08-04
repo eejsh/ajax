@@ -20,10 +20,13 @@ f.submit();
 
 파일 첨부 기능 시 enctype="multipart/form-data"필수 !!!!!
 -->
-<form name="f" id="f" method="POST" action="fileuploadok.do" enctype="multipart/form-data">
+<!-- <form name="f" id="f" method="POST" action="fileuploadok.do" enctype="multipart/form-data"> -->
+
+<form name="f" id="f" method="POST" action="fileok.do" enctype="multipart/form-data"><!-- database 연동 -->
+
 <!-- <input type="text"> multipart 사용해도 암호화로 잘 넘어감!!!!! -->
 
-<input type="file" name="file" accept="image/*">
+<input type="file" name="file" accept="image/*" multiple="multiple"><!--  파일 여러개 첨부시 multiple 선언 -->
 <input type="button" value="전송" onclick="abc();">
 </form>
 

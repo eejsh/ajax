@@ -23,11 +23,41 @@
  <servlet-name>fileup</servlet-name>
  <servlet-class>config.fileuploadok</servlet-class>
  </servlet>
- 
- 
  <servlet-mapping>
  <servlet-name>fileup</servlet-name>
  <url-pattern>/fileuploadok.do</url-pattern>
 </servlet-mapping> 
+
+ <servlet>
+ <servlet-name>fileup-database</servlet-name>
+ <servlet-class>config.fileok</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>fileup-database</servlet-name>
+ <url-pattern>/fileok.do</url-pattern>
+</servlet-mapping> 
+  
+  
+   <servlet>
+ <servlet-name>Exx1</servlet-name>
+ <servlet-class>config.ex1</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>Exx1</servlet-name>
+ <url-pattern>/ex1.do</url-pattern>
+</servlet-mapping> 
+  
+  
+  
+     <servlet>
+ <servlet-name>index</servlet-name>
+ <servlet-class>config.index</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>index</servlet-name>
+ <url-pattern>/index.do</url-pattern>
+</servlet-mapping> 
+  
+  
   
 </web-app>
