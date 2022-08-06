@@ -8,7 +8,7 @@ public class dbconnect {
 	//mysql 커넥터 방법.
 	public static Connection ct() throws ClassNotFoundException, SQLException {
 	String dbdrive = "com.mysql.jdbc.Driver";
-	String dburl = "jdbc:mysql://localhost:3306/webmail";
+	String dburl = 
 
 	
 	// mysql 부분에 mssql로 변경해서 사용가능..
@@ -18,8 +18,8 @@ public class dbconnect {
 	
 	
 	
-	String dbuser = "hong";
-	String dbpw = "a1234";
+	String dbuser = "
+	String dbpw = "
 	
 	Class.forName(dbdrive);
 	Connection con = DriverManager.getConnection(dburl, dbuser, dbpw);
