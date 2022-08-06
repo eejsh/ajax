@@ -13,15 +13,15 @@ public class dbcon { //db커넥터
 	//cafe24  
 	public static Connection cafe24() throws ClassNotFoundException , SQLException{
 	
-//		dburl = "jdbc:mysql://umj7-009.cafe24.com/leejongh";
-//		dbuser = "leejongh";
-//		dbpw = "Tt04860486!";
+//		dburl = 
+//		dbuser = 
+//		dbpw = 
 		
 		
 		String dbDriver = "com.mysql.jdbc.Driver";
-		String dburl ="jdbc:mysql://umj7-009.cafe24.com/eejsh08";
-	    String dbuser = "eejsh08";
-	    String dbpw ="hoho12!@";
+		String dburl =
+	    String dbuser = "
+	    String dbpw ="
 		
 		Class.forName(dbDriver);
 		Connection con = DriverManager.getConnection(dburl, dbuser, dbpw);
