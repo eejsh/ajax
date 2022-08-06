@@ -31,10 +31,10 @@ public class dbcon { //db커넥터
 	//kbsn
 	public static Connection kbsn() throws ClassNotFoundException , SQLException{
 		
-		String dbDrive = "com.mysql.jdbc.Driver";
-		String dburl ="jdbc:mysql://kbsn.or.kr:3306/classc"; 
-	    String dbuser = "mekeyace";
-	    String dbpw ="t04860486";
+		String dbDrive = 
+		String dburl =
+	    String dbuser = 
+	    String dbpw ="
 		
 		Class.forName(dbDrive);
 		Connection con = DriverManager.getConnection(dburl, dbuser, dbpw);
