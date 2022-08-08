@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +18,10 @@ function faqcheck(no) {
 		
 		if(frm.fcate.value==""|| frm.fcate.value=="5"){
 			alert("카테고리를 선택해주세요");
-		}
-		else if(frm.faq_qc.value==""){
+		}else if(frm.faq_qc.value==""){
 			alert("질문내용을 입력해주세요");
 			
-		}else if(frm.faq_view.value==""){
+		}else if(frm.faq_aw.value==""){
 			alert("답변내용을 입력해 주세요.");
 			frm.faq_view.focus();
 			
@@ -47,9 +47,9 @@ function faqcheck(no) {
 <form name="frm" id="frm">
 카테고리 : 
 <!-- onchange 카테고리 선택시 값이 변경시 onchange 로 설정 -->
-<input type="hidden" name="faq_view" value="Y">
+<input type="hidden" name="faq_view" value="Y" >
 <select name="fcate">
-<option value="5">카테고리를 선택하세요</option>
+<option>카테고리를 선택하세요</option>
 <option value="0">배송문의</option>
 <option value="1">반품/교환/환불</option>
 <option value="2">주문/결제</option>
@@ -58,7 +58,7 @@ function faqcheck(no) {
 </select>
 글쓴이<input type="text" name="fwrite" value="관리자" readonly><br>
 질문내용 <input type="text" name="faq_qc"><br>
-답변내용 <textarea name="faq_aw" rows="10" cols="80" placeholder="내용을 입력하세요.."></textarea>
+답변내용 <textarea name="faq_aw" rows="10" cols="200" placeholder="내용을 입력하세요.."></textarea>
 <br>
 <input type="button" value="FAQ리스트" onclick="faqcheck(1)">
 <input type="button" value="FAQ 등록"  onclick="faqcheck(2);" >
