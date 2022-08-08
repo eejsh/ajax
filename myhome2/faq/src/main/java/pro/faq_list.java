@@ -1,6 +1,7 @@
 package pro;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -32,13 +33,16 @@ public class faq_list extends HttpServlet {
 			ArrayList<select_sql> faqdata = ss.viewdata();
 			request.setAttribute("list", faqdata);
 			
-			System.out.println(faqdata.toString());
-			
-			RequestDispatcher rd = request.getRequestDispatcher("./faq_list.jsp");
-			rd.forward(request, response);
+			//System.out.println(faqdata.toString());
 			
 			
 		
+			
+			
+			
+			
+			RequestDispatcher rd = request.getRequestDispatcher("./faq_list.jsp");
+			rd.forward(request, response);
 			
 		}catch(Exception e) {
 			

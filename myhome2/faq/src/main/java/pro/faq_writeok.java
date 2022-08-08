@@ -27,6 +27,9 @@ public class faq_writeok extends HttpServlet {
 	 String faq_qc = request.getParameter("faq_qc");
 	 String faq_aw = request.getParameter("faq_aw");
 	 String faq_view = request.getParameter("faq_view"); //히든
+	 
+	 System.out.println(faq_view);
+	 
 	 timer tr = new timer();
 	
 	 String faq_indate = tr.now_datetime();

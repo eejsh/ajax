@@ -53,19 +53,18 @@ public class select_sql {
 	public ArrayList<select_sql> viewdata() throws ClassNotFoundException, SQLException {
 
 		ArrayList<select_sql> list = new ArrayList<>();
-		
+
 		dbcon db = new dbcon();
 		db.cafe24();
-		
+
 		Connection con = db.cafe24();
-		
-		String sql= "select * from faq_board;" ; 
+
+		String sql = "select * from faq_board;";
 //		String sql = "select inx, fcate, fwrite, faq_qc, indate from faq_board; ";
-		
-		
+
 		PreparedStatement ps = con.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
-	
+
 		while (rs.next()) {
 			select_sql ss = new select_sql();
 			ss.setinx(rs.getString("inx"));
@@ -74,10 +73,9 @@ public class select_sql {
 			ss.setFaq_qc(rs.getString("faq_qc"));
 			ss.setIndate(rs.getString("indate"));
 			list.add(ss);
-			
-			
-	//System.out.println(list.toString());
-			
+
+			// System.out.println(list.toString());
+
 		}
 
 		return list;
