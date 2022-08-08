@@ -12,12 +12,19 @@
 <title>FAQ 리스트 출력</title>
 <link rel="stylesheet" type="text/css" href="./css/faq.css?v=8">
 <script>
-
 function faq_write(){
 	
 	location.href='./faq_write.html';
 	
 }
+
+
+function modify(inx){
+	
+	location.href ='./faq_view.html?inx=' + inx;
+			
+	}
+
 
 </script>
 
@@ -48,6 +55,7 @@ function faq_write(){
 		<% } else { 
 	for(select_sql fetch : datas){
 			int num = Integer.parseInt(fetch.getFcate());
+			//별도의 jsp 파일 만들어서 사용 할 수 있음
 			String cate = null;
 			switch(num){
 			case 1:
@@ -71,7 +79,7 @@ function faq_write(){
 				break;
 			}
 		%>	
-		<span class="faq_content_view">
+		<span class="faq_content_view" onclick="modify(<%=fetch.getinx() %>)" >
 			<ul>
 <%-- 			<li><%=fetch.getFcate() %></li> --%>
 				<li><%=cate %></li>
