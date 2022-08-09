@@ -2,15 +2,7 @@
 <%@page import="org.json.simple.JSONObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-    <%
-    
-    //CORS : 도메인 및 아이피가 다를 경우 외부에서 .json을 가져가지 못함.. 
-    
-    response.addHeader("Access-Control-Allow-Origin","*");
-    response.addHeader("Access-Control-Allow-Credentials","true");
-    %>
-    
+
 <%
     
 //jsp에서 json 파일처럼 배열로 인식되도록 하는 클래스 입니다.
