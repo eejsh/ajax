@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>상품 검색 리스트 출력파트</title>
 </head>
-<%@ include file="./ex24_01.jsp %>
 
 <%
 //검색은 포도로 하지만 청포도 2kg 로 출력..
@@ -34,9 +33,11 @@ Boolean ck = false;  //검색 상품 결과 유무
 %>
 <!-- jsp:include 는 태그개념, name값은 절대 중복되면안됨! 
 ex)param : html에 name 값을 선언한걸 깜빡하고 같은 name값을 선언해서 충돌되는 경우가 많음.ㅠ -->
-<jsp:include page="ex24_01.jsp"> <!-- 지속적으로 검색을 할 수있도록 하기 위함 -->
-
+<!-- 지속적으로 검색을 할 수있도록 하기 위함 -->
 <!-- 검색 받은 값을 리턴 시킴. -->
+
+
+<jsp:include page="ex24_01.jsp"> 
 <jsp:param value="<%=pronm %>" name="search"></jsp:param>
 </jsp:include>
 
