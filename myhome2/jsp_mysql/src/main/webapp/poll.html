@@ -1,37 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <title>설문조사</title>
-<script src="./jquery.js"></script>
+<script src="./js/jquery.js"></script>
 
 <script>
 
-
-$(function(){
+function abc() {
 	
-	$("#okk").click(function() {
-		
-	var $a = $("#name").val();
-	var $b = $("#id").val();
-	var $c = $("#tel").val();
 	
-	if($a==""){
-		alert("이름을 입력하세요.");
-	}else if($b==""){
-		alert("아이디를 입력하세요");
-	}else if($c==""){
-		alert("전화번호를 입력하세요.");
-		if($c<=11){
-			alert("전화번호는 총 11자리입니다.(-제외)");
-		}
+	if(f.name.value==""){
+	 alert("이름을 입력하세요.. ");
+	}else if(f.id.value==""){
+		alert("아이디를 입력하세요.. ");
+	}else if(f.tel.value==""){
+		alert("전화번호를 입력하세요..");		
 	}else{
-	$("#f").submit();
-		
+	f.submit();
 	}
-	});
 	
-});
+	
+}
+
+
+
 
 </script>
 
@@ -39,7 +34,7 @@ $(function(){
 </head>
 <body>
 <p>[가장 어려운 back-end 과목은?]</p>
-<form name="f" id="f" method="post" action="./pollok.jsp" enctype="application/x-www-form-urlencoded">
+<form name="f" id="f" method="post" action="pollok.jsp" enctype="application/x-www-form-urlencoded">
 고객명 : <input type="text" name="name"><br>
 아이디 : <input type="text" name="id"><br>
 연락처 : <input type="text" name="tel" maxlength="11" placeholder="숫자만입력하세요"><br>
@@ -48,8 +43,7 @@ $(function(){
 <input type="radio" value="2" name="itext">Java script<br>
 <input type="radio" value="3" name="itext">AJAX<br>
 <input type="radio" value="4" name="itext">JSP<br>
-<input type="button" value="설문조사참여" id="okk">
-<!-- <input type="submit" value="설문조사참여" action="./pollok.jsp"> -->
+<input type="button" value="설문조사참여" onclick="abc()">
 </form>
 </body>
 </html>
