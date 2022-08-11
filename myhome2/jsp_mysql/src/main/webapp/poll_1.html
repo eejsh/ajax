@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>설문조사</title>
+<script src="./jquery.js"></script>
+</head>
+<body>
+
+
+<p>[가장 어려운 back-end 과목은?]</p>
+<form name="f" id="f" method="post" action="./pollok1.jsp"  enctype="application/x-www-form-urlencoded">
+고객명 : <input type="text" name="name"><br>
+아이디 : <input type="text" name="id"><br>
+연락처 : <input type="text" name="tel" maxlength="11" placeholder="숫자만입력하세요"><br>
+
+
+<ul style="list-style: none; margin: 0; padding: o">
+
+<li><label><input type="radio" value="0" name="itext" checked>JAVA</label></li>
+<li><label><input type="radio" value="1" name="itext" >JAVA Servlet</label></li>
+<li><label><input type="radio" value="2" name="itext" >Javascript</label></li>
+<li><label><input type="radio" value="3" name="itext" >Ajax</label></li>
+<li><label><input type="radio" value="4" name="itext" >JSP</label></li>
+</ul>
+<br>
+
+<button>설문조사제출</button>
+</form>
+</body>
+</html>
