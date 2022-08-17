@@ -6,10 +6,10 @@ Connection con = null;
 String userid = null;
 
 try {
-	String Driver = "com.mysql.jdbc.Driver";
-	String url = "jdbc:mysql://umj7-009.cafe24.com/eejsh08";
-	String user = "eejsh08";
-	String password = "hoho12!@";
+	String Driver = "";
+	String url = "";
+	String user = "";
+	String password = "";
 
 	Class.forName(Driver);
 	con = DriverManager.getConnection(url, user, password);
