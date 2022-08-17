@@ -6,10 +6,10 @@
 <%@ taglib prefix="fm" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <sql:setDataSource  
 var="dbs" 
-url="jdbc:mysql://umj7-009.cafe24.com/eejsh08"
-driver ="com.mysql.jdbc.Driver" 
-user="eejsh08" 
-password="hoho12!@"></sql:setDataSource>
+url=""
+driver ="" 
+user="" 
+password=""></sql:setDataSource>
 <!DOCTYPE html>
 <html>
 <head>
