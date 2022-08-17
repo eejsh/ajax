@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>JSP 6일차 session</title>
 </head>
+<%@include file = "./js1_2.jsp" %>
 <body>
 <!-- 
 client에 대한 정보를 저장하여 서버와 통신하면서 페이지 이동 시 지속적으로 사용 가능하도록 하는 객체 입니다.(정보유지) 

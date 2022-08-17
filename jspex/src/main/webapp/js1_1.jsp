@@ -30,6 +30,9 @@ session.setAttribute("mail", email);
 session.setAttribute("lv", level);
 
 
+session.setMaxInactiveInterval(1*10); //10초
+
+
 long create = session.getCreationTime();   // 세션 생성 시간
 long last = session.getLastAccessedTime(); // 세션 유지 시간
 long usertime =(last-create) / 60000;      // 세션 경과 시간 (로그인 경과시간)
@@ -40,7 +43,9 @@ long usertime =(last-create) / 60000;      // 세션 경과 시간 (로그인 �
 session.setMaxInactiveInterval(60*60); // 최대시간을 조정하는 부분.
 int time = session.getMaxInactiveInterval()/60;   //session 사용이(60)30분 동안 유지 (은행, 공공기관)보안이 중요한 사이트인 경우 계속 넣어줘여됨. 
 													//페이지 이동→초기화→30분유지
-
+									
+													
+													
 out.print(time + "<br>"); 
 out.print(create + "<br>");
 out.print(last + "<br>");
