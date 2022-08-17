@@ -8,11 +8,11 @@
 <!-- sql:setDataSource : DB연결 태그  
 dbs라는 변수에 url, driver, user, password 넣어서 연결-->
 <sql:setDataSource  
-var="dbs" 
-url="jdbc:mysql://umj7-009.cafe24.com/eejsh08"
-driver ="com.mysql.jdbc.Driver" 
-user="eejsh08" 
-password="hoho12!@"></sql:setDataSource>
+var="" 
+url="
+driver ="r" 
+user="" 
+password="></sql:setDataSource>
 
 
 <!DOCTYPE html>
