@@ -39,7 +39,7 @@ public class mailto extends HttpServlet {
 	
 	String host = "smtp.naver.com";  //네이버 서버명
 	String user  = admin;  //관리자 ( 보내는 이 )
-	String pw = "VWMT24XBHPSM"; //네이버 로그인 pw
+	String pw = "  "; //네이버 로그인 pw
 	
 	//properties, map : 같은 속성임  (열거형: 키값이 잇는 배열)
 	
@@ -69,11 +69,11 @@ public class mailto extends HttpServlet {
 		msg.setSubject(postsubject);  //메일(수신)제목
 		String img="<span style='display:block; border:1px solid #ccc, width:300px; height:30px text-ailgn:center;"
 				+ "line-hight:30px'>"
-				+ "<a href='http://eejsh08.cafe24.com/index.jsp?mail="+postmail+"'>"  // jsp?mail=수신자메일.. parameter로 받아서 확인! 
+				+ "<a href='http://aaa.cafe24.com/index.jsp?mail="+postmail+"'>"  // jsp?mail=수신자메일.. parameter로 받아서 확인! 
 				+ "[인증번호 : 12345678]"
 				+ "</a>"
 				+ "</span>";
-	//	String img = "<img src=http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg>";
+	//	String img = "<img src=이미지주소>";
 		msg.setContent(img, "text/html; charset=utf-8");
 	//	msg.setText(img);  // 메일(수신)내용 
 		
