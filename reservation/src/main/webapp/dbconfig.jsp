@@ -5,10 +5,10 @@
 Connection con = null;
 
 try{
-	String db = "com.mysql.jdbc.Driver";
-	String url = "jdbc:mysql://kbsn.or.kr:3306/cclass";
-	String user = "java_c";
-	String pw = "java_cclass";
+	String db = "";
+	String url = "j";
+	String user = "j";
+	String pw = "jav";
 	
 	Class.forName(db);
 	con=DriverManager.getConnection(url,user,pw);
