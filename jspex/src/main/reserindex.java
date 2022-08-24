@@ -38,8 +38,8 @@ public class reserindex extends HttpServlet {
 		String num = "12345-678912";
 		
 		String host = "smtp.naver.com";
-		String user = "eejsh08@naver.com";
-		String pw = "VWMT24XBHPSM";
+		String user = "@naver.com";
+		String pw = "";
 		
 		System.out.println(name + tel + mail);
 		
@@ -71,7 +71,7 @@ public class reserindex extends HttpServlet {
 				+"<li>이메일 "+mail+"</li>"
 				+"<li>예약번호"+num+" </li>"
 				+"<li>"
-				+ "<a href='http://eejsh08.cafe24.com/index.jsp?mail="+mail+"'>"
+				+ "<a href='http://aa.cafe24.com/index.jsp?mail="+mail+"'>"
 				+ "<input type='button'value='입금하기'></a>"
 				+ "</li>"
 				+"</ol>";
