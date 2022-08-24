@@ -10,10 +10,10 @@ public class dbconfig {
 	public Connection getConnection() throws ClassNotFoundException, SQLException {
 
 
-		String db = "com.mysql.jdbc.Driver";
-		String url = "jdbc:mysql://kbsn.or.kr:3306/cclass";
-		String user = "java_c";
-		String pw = "java_cclass";
+		String db = ";
+		String url = "";
+		String user = "";
+		String pw = "";
 
 		Class.forName(db);
 		con = DriverManager.getConnection(url, user, pw);
