@@ -8,7 +8,7 @@
 <div>
 <ul>
 <li>
-<input type="hidden" name="admin" value="eejsh08@naver.com"><br>
+<input type="hidden" name="admin" value="메일"><br>
 메일주소(받는분) : <input type="text" name="postmail"><br>
 제목 : <input type="text" name="postsubmail"><br>
 메일내용 : <textarea col=60 row=10 name="postmsg"></textarea><br>
