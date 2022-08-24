@@ -7,8 +7,8 @@ public class se extends Authenticator{
 	@Override
 	protected PasswordAuthentication getPasswordAuthentication() {
 
-		String eid = "eejsh08@naver.com";
-		String epw = "VWMT24XBHPSM";
+		String eid = "aa@naver.com";
+		String epw = "aa";
 			return new PasswordAuthentication(eid, epw);
 		}
 	
